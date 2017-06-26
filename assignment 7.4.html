@@ -1,0 +1,43 @@
+<doctype html>
+<html>
+      <head>
+            <title>Assignment 7.4</title>
+            <script>
+               /*inner function with two parameters */
+               function inner(a,b)
+                {
+                      /*printsquare function to display the value*/
+                     function printsquare(c,id)
+                      {
+                          document.getElementById(id).innerHTML="Square of " + c + " is: " + c*c;
+                       }
+                      printsquare(a,"demo");
+		      printsquare(b,"demo1");
+                 }
+                 /*outer function*/
+                 function outer()
+                 {
+                      var result;
+                      var a=document.getElementById("FirstNumber").value;
+                      var b=document.getElementById("SecondNumber").value;
+                      result=inner(a,b);
+                 }
+             </script>
+
+      </head>
+      <body>
+           <h2><center>Nested Function Example</center></h2>
+
+            
+             <label>Enter FirstNumber :</label>
+             <input type="text" id="FirstNumber"></input></br></br>
+
+              <label>Enter SecondNumber :</label>
+             <input type="text" id="SecondNumber"></input></br>
+
+             <p>click the button to find square </p>
+            <button onclick="outer()">click me</button>
+             <p id="demo"></p></br>
+            <p id="demo1"></p>
+      </body>
+</html>
